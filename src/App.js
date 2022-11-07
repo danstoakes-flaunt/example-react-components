@@ -1,23 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 
+import InputText from "./components/input-text";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <InputText name="password" type="text" placeholder="Password" minLength = { 5 } maxLength={ 20 } />
+      <InputText id="password_1" name="password" type="password" placeholder="Password" minLength = { 5 } maxLength={ 20 } hasInteger hasPunctuation />
+      <InputText name="password" type="password" placeholder="Password" minLength = { 5 } maxLength={ 20 } hasInteger hasPunctuation match="password_1" />
     </div>
   );
 }
